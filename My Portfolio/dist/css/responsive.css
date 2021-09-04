@@ -1,0 +1,590 @@
+:root{
+    --dark:rgb(0, 0, 0);
+    --gray:#333;
+    --light-gray:#999;
+    --white:#fff;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--dark);
+    overflow-x: hidden;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+.house{
+    width: 70%;
+    margin: auto;
+}
+h1{
+    font-size: 3.5rem;
+    margin: 10px 0;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+h2{
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin: 5px 0;
+    color: var(--gray);
+    font-weight: 400;
+}
+h3{
+    font-size: 1rem;
+    color: var(--white);
+    margin: 5px 0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+h4{
+    font-size: .8rem;
+    color: var(--white);
+    font-weight: 200;
+}
+p{
+    color: var(--white);
+    font-size: 1.1rem;
+    text-align: justify;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+img{
+    width: 100%;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  width: 6px;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: yellowgreen;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* End of scrollBar */
+/* Toggle */
+header .brand .toggle{
+    display: none;
+    cursor: pointer;  
+}
+header .brand .toggle div{
+    height: 3px;
+    width: 22px;
+    margin: 5px 0;
+    background-color:var(--gray);
+    cursor: pointer;
+}
+
+header .top a{
+    position: fixed;
+    bottom: 10%;
+    right: 30px;
+    background: var(--light-gray);
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+header .top a:hover{
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+}
+
+.show{
+    transform: translateX(0);
+}
+
+
+
+/* /* Small devices (portrait tablets and large phones, 600px and up) */
+@media  screen and (max-width: 375px){
+    header .brand .logo h1{
+        font-size: 1.2rem;
+        }
+        header .brand .toggle{
+            display: block;
+        }
+    header  ul{
+        position: absolute;
+        top: 12%;
+        left: 15%;
+        flex-direction: column;
+        width: 70%;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--gray);
+        border-radius: 5px;
+        transform: translateX(150%);
+        transition: .3s ease-out;
+        z-index: 1;
+        }  
+    header ul li{
+            margin: 10px 0;
+        }
+        header ul li a{
+            color: #fff;
+        }
+    header .hero h1{
+            font-size: 3rem;
+            line-height: 1;
+        } 
+    .right, .bottom-right, .left, .top-left{
+            height: 40px;
+            width: 40px;
+            opacity: .4;
+        }
+
+        /* ONe */
+    .one .row{
+        display: grid;
+        grid-template-columns: 1fr;
+        }
+        .one .col-one{
+            height: 60vh;
+        }
+        .one .col-one .img{
+            height: 200px;
+            object-fit: cover;
+            background-position: top center;
+        }
+        .one .col-one h2{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .one .col-one .links{
+            margin-top: 5px;
+        }
+        .one .col-one .line{
+            margin-top: 5px;
+        }
+        .one .col p{
+            font-size: .8rem;
+            width: 100%;
+        }
+        .one .col .education{
+            width: 100%;
+            text-align: left;
+        }
+        
+        /* Two */
+        .two .row{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .two .row .col.img{
+            display: none;
+        }
+        .two .row .skills img{
+            width: 20px;
+        }
+        .two .row .skills .img:hover h4{
+            display: block;
+        }
+
+        /* Three */
+        .three{
+            height: 100vh;
+        }
+        .three h1{
+            font-size: 3rem;
+            margin-left: 15px;
+            margin-top: 60px;
+        }
+        .three p{
+            font-size: .8rem;
+            margin-left: 15px;
+        }
+        .three img{
+            width: 120px;
+        }
+
+        /* Four */
+        .four h2{
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .four .logos{
+            grid-template-columns: repeat(4, 1fr);
+            width: 80%;
+            margin: auto;
+        }
+        .four .logos img{
+            width: 50px;
+            margin: 40px 5px;
+            transition: .3s ease-out;
+        }
+        /* Five */
+        .five{
+            height: 100vh;
+        }
+        .five h2{
+            font-size: 1.5rem
+        }
+        .five .ads{
+             grid-template-columns: repeat(2, 1fr);
+              grid-gap: 4px;
+        }
+        .five .ads img{
+            width: 140px;
+        }
+        .six .ads{
+             grid-template-columns: repeat(2, 1fr);
+              grid-gap:10px;
+        }
+
+        /* Six */
+           .six .ads{
+             grid-template-columns: repeat(2, 1fr);
+              grid-gap:10px;
+        }
+        .six h2{
+            font-size: 1.5rem;
+            margin: 30px 0;
+        }
+        .six .ads img{
+            width: 100px;
+        }
+
+        /* Seven */
+        .seven .row{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 10px;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .seven h2{
+            font-size: 1.5rem;
+        }   
+
+        .eight{
+            height: 170vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .eight .row{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        /*Footer  */
+     /* 
+   
+    } */
+     footer form textarea, button, input{
+    width: 100%;
+     }
+    footer .logo{
+    width: 80px;
+    }
+    footer{
+        height: 100vh;
+    }
+    footer .row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Tablets */
+@media  screen and (min-width: 376px) and (max-width: 1090px){
+     header .brand .toggle{
+            display: block;
+        }
+         header  ul{
+        position: absolute;
+        top: 12%;
+        left: 25%;
+        flex-direction: column;
+        width: 50%;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--gray);
+        border-radius: 5px;
+        transform: translateX(150%);
+        transition: .3s ease-out;
+        z-index: 1;
+        }  
+    header ul li{
+            margin: 20px 0;
+        }
+        header ul li a{
+            color: #fff;
+        }
+         header .hero h1{
+            font-size: 3.5rem;
+            line-height: 1;
+        } 
+        .right, .bottom-right, .left, .top-left{
+            height: 80px;
+            width: 80px;
+            opacity: .4;
+        }
+
+        /* One */
+         .one .row{
+        display: grid;
+        grid-template-columns: 1fr;
+        }
+        .one .col-one .img{
+            height: 400px;
+            object-fit: cover;
+            background-position: top center;
+            background-size: cover;
+            background-repeat: no-repeat
+        }
+         .one .col p{
+            font-size: .8rem;
+            width: 100%;
+        }
+        .one .col-one .links{
+            margin-top: 5px;
+            text-align: center;
+        }
+         .one .col-one .links a{
+             font-size: 1.2rem
+         }
+         .two .row .col.img{
+            display: none;
+        }
+         .two .row .skills img{
+            width: 40px;
+        }
+
+
+        /* Three */
+          .three{
+            height: 100vh;
+        }
+            .three h1{
+            font-size: 3.5rem;
+            margin-left: 15px;
+            margin-top: 60px;
+        }
+        .three p{
+            font-size: 1rem;
+            margin-left: 15px;
+        }
+        .three img{
+            width: 120px;
+        }
+        
+        /* Four */
+        .four{
+            padding: 30px 0;
+        }
+            .four h2{
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .four .logos{
+            grid-template-columns: repeat(3, 1fr);
+            width: 80%;
+            margin: auto;
+        }
+        .four .logos img{
+            width: 50px;
+            margin: 40px 5px;
+            transition: .3s ease-out;
+        }
+        /* Five */
+              .five{
+            height: 100vh;
+        }
+        .five h2{
+            font-size: 1.5rem
+        }
+        .five .ads{
+             grid-template-columns: repeat(2, 1fr);
+              grid-gap: 20px;
+        }
+        .five .ads img{
+            width: 180px;
+        }
+        /* Six */
+       section.six{
+           margin-top: 300px;
+       }
+        .six .ads{
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap:10px;
+        }
+        .six h2{
+            font-size: 1.5rem;
+            margin: 30px 0;
+        }
+        .six .ads img{
+            width: 200px;
+        }
+
+          .seven .row{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            /* margin-top: 30px; */
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 30px; */
+        }
+        .seven h2{
+            font-size: 1.5rem;
+        }  
+
+        /* Eight */
+        .eight{
+            height: 130vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .eight .row{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        /* Footer */
+        footer .logo{
+    width: 80px;
+    margin-right: 40px;
+    }
+    footer form textarea, button, input{
+    width: 80%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Website */
+.seven .row .col.one{
+    background: url(/dist/img/website/ufeja.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.two{
+    background: url(/dist/img/website/jaed.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.three{
+    background: url(/dist/img/website/serdec.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.four{
+    background: url(/dist/img/website/gleamer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.five{
+    background: url(/dist/img/website/cvt.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.six{
+    background: url(/dist/img/website/talking.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.seven{
+    background: url(/dist/img/website/blue.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.eight{
+    background: url(/dist/img/website/easy.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.nine{
+    background: url(/dist/img/website/cards.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.ten{
+    background: url(/dist/img/website/modal.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.eleven{
+    background: url(/dist/img/website/social.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.seven .row .col.twelve{
+    background: url(/dist/img/website/devbammy.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
